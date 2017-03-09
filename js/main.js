@@ -38,16 +38,18 @@ var create = function(){
 
 // update game state each frame
 var update = function(){
-  if(Nakama.keyboard.isDown(Phaser.Keyboard.UP)){
+
+  if(Nakama.keyboard.isDown(Phaser.Keyboard.UP)&&Nakama.player.position.y>0){
     Nakama.player.position.y -=10;
   }
-  else if(Nakama.keyboard.isDown(Phaser.Keyboard.DOWN)) {
+ if(Nakama.keyboard.isDown(Phaser.Keyboard.DOWN)&&Nakama.player.position.y<880) {
     Nakama.player.position.y +=10;
   }
-  if(Nakama.keyboard.isDown(Phaser.Keyboard.LEFT)){
+
+  if(Nakama.keyboard.isDown(Phaser.Keyboard.LEFT)&&Nakama.player.position.x>0){
     Nakama.player.position.x -=10;
   }
-  else if(Nakama.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+  if(Nakama.keyboard.isDown(Phaser.Keyboard.RIGHT)&&Nakama.player.position.x<=550) {
     Nakama.player.position.x +=10;
   }
 }
