@@ -13,6 +13,10 @@ Nakama.configs = {
   PLAYER2_PCS:{
     x:400,
     y:200
+  },
+  ENEMY : {
+    x:300,
+    y:100
   }
 };
 
@@ -52,6 +56,7 @@ var create = function(){
   Nakama.keyboard = Nakama.game.input.keyboard;
   Nakama.game.add.sprite(0,0,'background')
   Nakama.players= [];
+  Nakama.enemys = [];
   Nakama.players.push(
     new ShipController(
       Nakama.configs.PLAYER1_PCS.x,
@@ -80,12 +85,22 @@ var create = function(){
       }
     )
   );
+  Nakama.enemys.push(
+    new EnemyController(
+      Nakama.configs.ENEMY.x,
+      Nakama.configs.ENEMY.y,
+      "EnemyType1.png"
+    )
+  );
 }
 
 // update game state each frame
 var update = function(){
   Nakama.players.forEach(function(ship){
     ship.update();
+  });
+  Nakama.enemys.forEach(function(ene){
+    ene.update();
   });
 }
 

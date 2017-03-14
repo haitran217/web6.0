@@ -1,5 +1,3 @@
-
-
 class ShipController{
   constructor(x,y,spriteName,configs){
     this.sprite = Nakama.game.add.sprite(x,y,'assets',spriteName);
