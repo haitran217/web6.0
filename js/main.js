@@ -15,7 +15,7 @@ Nakama.configs = {
     y:200
   },
   ENEMY : {
-    x:300,
+    x:0,
     y:100
   }
 };
@@ -102,7 +102,7 @@ var update = function(){
   Nakama.enemys.forEach(function(ene){
     ene.update();
   });
-}
+ }
 
 // before camera render (mostly for debug)
 var render = function(){}

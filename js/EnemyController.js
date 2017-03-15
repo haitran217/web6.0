@@ -6,10 +6,21 @@ class EnemyController{
     this.configs = configs;
   }
   update(){
-    this.sprite.body.velocity.x = EnemyController.ENEMY_SPEED;
-    setTimeout(function(){
+    if(this.sprite.x <100){
+      this.sprite.body.velocity.x = EnemyController.ENEMY_SPEED;
+    }
+    if(this.sprite.x >100){
       this.sprite.body.velocity.y = EnemyController.ENEMY_SPEED;
-    },2000);
-  }
+    }
+    if(this.sprite.x >450){
+      this.sprite.body.velocity.x = -EnemyController.ENEMY_SPEED;
+    }
+    if(this.sprite.y > 450){
+      this.sprite.body.velocity.y = -EnemyController.ENEMY_SPEED;
+    }
+   }
+
+
+
 }
 EnemyController.ENEMY_SPEED = 100;
